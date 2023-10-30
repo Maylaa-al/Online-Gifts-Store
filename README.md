@@ -15,4 +15,4 @@ Glisten & Glow Gifts is an Android application aimed at providing users a seamle
  - **Order Status**: Drop an email to inquire about your order's status.
  - **FAQ**: Got questions? We have the answers!
 
- ## Assets Resources
+ ## Asset Sources
