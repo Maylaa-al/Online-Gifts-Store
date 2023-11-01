@@ -16,3 +16,11 @@ Glisten & Glow Gifts is an Android application aimed at providing users a seamle
  - **FAQ**: Got questions? We have the answers!
 
  ## Asset Sources
+
+- *www.agusyornet.com*
+- *www.thesprucecrafts.com*
+- *www.makeit-loveit.com*
+- *www.thenavagepatch.com*
+- *www.luxe.digital*
+- *www.happinessishomemade.net*
+- *www.realsimple.com*
