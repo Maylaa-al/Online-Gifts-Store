@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.CategoriesFragment">
+
+
+    <TextView
+        android:id="@+id/cat_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="cursive"
+        android:text="Categories"
+        android:textAlignment="center"
+        android:textColor="#E5C974"
+        android:textSize="48sp"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    <ListView
+        android:id="@+id/cat_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:listitem="@layout/cat_list_view"></ListView>
+
+    <GridView
+        android:id="@+id/cat_grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="2"
+        android:columnWidth="100dp"
+        android:layout_margin="20dp"
+        tools:listitem="@layout/cat_grid_view"
+        tools:visibility="visible" />
+
+    </FrameLayout>
+</LinearLayout>
