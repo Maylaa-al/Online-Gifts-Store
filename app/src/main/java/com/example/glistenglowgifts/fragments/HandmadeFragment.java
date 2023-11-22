@@ -3,12 +3,20 @@ package com.example.glistenglowgifts.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.glistenglowgifts.CustomGridViewAdapter;
 import com.example.glistenglowgifts.R;
+import com.example.glistenglowgifts.recycleView.CustomRecyclerViewAdapter;
+import com.example.glistenglowgifts.recycleView.Term;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +69,33 @@ public class HandmadeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_handmade, container, false);
+        View view = inflater.inflate(R.layout.fragment_handmade, container, false);
+        int platesImg = R.drawable.decoupaged_plates;
+        int handprintImg = R.drawable.handprint_keychain;
+        int headphones = R.drawable.headphones;
+        int slippersImg = R.drawable.mouse_slippers;
+        int oilsfinalImg = R.drawable.oilsfinal;
+        int earringsImg = R.drawable.origami_earrings;
+        int soapImg = R.drawable.peaches_and_cream_soap;
+        int hangerImg = R.drawable.plant_hanger;
+        int placementImg = R.drawable.reversable_placment;
+        int potsImg = R.drawable.sharpie_flower_pots;
+        int chBoardImg = R.drawable.turquoise_inlay_cheese_board;
+
+        ArrayList<Term> terms = new ArrayList<Term>();
+        terms.add(new Term("Handprint Keychain", handprintImg));
+        terms.add(new Term("Peaches and Cream Soap", soapImg));
+        terms.add(new Term("Reversable Placment", placementImg));
+        terms.add(new Term("Headphones", headphones));
+        terms.add(new Term("Decoupaged Plates", platesImg));
+        terms.add(new Term("Mouse Slippers", slippersImg));
+        terms.add(new Term("Sharpie Flower Pots", potsImg));
+        terms.add(new Term("Oils Final", oilsfinalImg));
+        terms.add(new Term("Origami Earrings", earringsImg));
+        terms.add(new Term("Turquoise Inlay Cheese Board", chBoardImg));
+        RecyclerView recyclerView = view.findViewById(R.id.handmade_recycleView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(new CustomRecyclerViewAdapter(terms));
+        return view;
     }
 }
