@@ -80,7 +80,7 @@ public class ForHerFragment extends Fragment {
         int kindle = R.drawable.kindle;
         int jBoxImg = R.drawable.j_box;
         int tileImg = R.drawable.tile;
-        int candleImg = R.drawable.candel;
+        int candleImg = R.drawable.candle;
         int jeweleryImg = R.drawable.jewelry;
 
         ArrayList<Term> terms = new ArrayList<Term>();
@@ -98,7 +98,7 @@ public class ForHerFragment extends Fragment {
         terms.add(new Term("Tile Pro 2-Pack", tileImg));
         terms.add(new Term("Brooklyn Candle Studio Candle of the Month Subscription", candleImg));
         terms.add(new Term("Rocksbox Jewelry Gift Subscription", jeweleryImg));
-        RecyclerView recyclerView = view.findViewById(R.id.recycle);
+        RecyclerView recyclerView = view.findViewById(R.id.women_recycleView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new CustomRecyclerViewAdapter(terms));
 

@@ -3,12 +3,18 @@ package com.example.glistenglowgifts.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.glistenglowgifts.R;
+import com.example.glistenglowgifts.recycleView.CustomRecyclerViewAdapter;
+import com.example.glistenglowgifts.recycleView.Term;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +67,41 @@ public class ForHimFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_for_him, container, false);
+        View view = inflater.inflate(R.layout.fragment_for_him, container, false);
+        int swissWImg = R.drawable.swisswatch;
+        int customFigureImg = R.drawable.customfigure;
+        int lensImg = R.drawable.lens;
+        int historyImg = R.drawable.history;
+        int gucciImg = R.drawable.gucci;
+        int watchImg = R.drawable.watch;
+        int passportHolderImg = R.drawable.passportholder;
+        int coolerImg = R.drawable.cooler;
+        int samsungImg = R.drawable.samsung;
+        int perfumeImg = R.drawable.perfume;
+        int candleImg = R.drawable.candlemen;
+        int coffeeSubsImg = R.drawable.coffeesub;
+        int chessImg = R.drawable.chess;
+        int coffeeMachineImg = R.drawable.coffeemachine;
+
+        ArrayList<Term> terms = new ArrayList<Term>();
+        terms.add(new Term("LIV WATCHES, Swiss Sport Watch", swissWImg));
+        terms.add(new Term("Custom Brick Figure, he definitely doesn't have this", customFigureImg));
+        terms.add(new Term("Telephoto Lens", lensImg));
+        terms.add(new Term("History by Mail Subscription, FOR MEN WHO LOVE THE HISTORY CHANNEL", historyImg));
+        terms.add(new Term("GUCCI, Guilty Cologne", gucciImg));
+        terms.add(new Term("LIV WATCHES, Swiss Sport Watch", perfumeImg));
+        terms.add(new Term("MONTBLANC, a luxury passport holder to accompany him in his life journeys", passportHolderImg));
+        terms.add(new Term("COLEMAN, for the camper man", coolerImg));
+        terms.add(new Term("SAMSUNG, the best gift for the music-geek man", samsungImg));
+        terms.add(new Term("GIORGIO ARMANI, a classic in men's perfume",watchImg));
+        terms.add(new Term("CIRE TRUDON, Odalisque Bougie Classic Scented Candle ", candleImg));
+        terms.add(new Term("ATLAS COFFEE CLUB, Coffee Gift Subscriptions ", coffeeSubsImg));
+        terms.add(new Term("CHESS ARMORY, a must-have gift for man who likes games", chessImg));
+        terms.add(new Term("BREVILLE, give him a smooth morning wake-up", coffeeMachineImg));
+        RecyclerView recyclerView = view.findViewById(R.id.men_recycleView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(new CustomRecyclerViewAdapter(terms));
+
+        return view;
     }
 }

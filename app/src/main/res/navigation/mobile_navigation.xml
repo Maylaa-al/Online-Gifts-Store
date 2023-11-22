@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_nav_categories_to_forHerFragment"
             app:destination="@id/forHerFragment" />
+        <action
+            android:id="@+id/action_nav_categories_to_forHimFragment"
+            app:destination="@id/forHimFragment" />
     </fragment>
     <fragment
         android:id="@+id/nav_favourites"
@@ -52,4 +55,9 @@
         android:id="@+id/forHerFragment"
         android:name="com.example.glistenglowgifts.fragments.ForHerFragment"
         android:label="ForHerFragment" />
+    <fragment
+        android:id="@+id/forHimFragment"
+        android:name="com.example.glistenglowgifts.fragments.ForHimFragment"
+        android:label="fragment_for_him"
+        tools:layout="@layout/fragment_for_him" />
 </navigation>

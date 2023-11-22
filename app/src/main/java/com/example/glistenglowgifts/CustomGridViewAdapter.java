@@ -61,7 +61,10 @@ public class CustomGridViewAdapter extends ArrayAdapter<Cats> {
                 public void onClick(View view) {
                     if (cat.getName().equals("For Women")) {
                         Navigation.findNavController(view).navigate(R.id.action_nav_categories_to_forHerFragment);
-                    } else return;
+                    }
+                    if (cat.getName().equals("For Men")) {
+                        Navigation.findNavController(view).navigate(R.id.action_nav_categories_to_forHimFragment);
+                    }
                     }
             });
 

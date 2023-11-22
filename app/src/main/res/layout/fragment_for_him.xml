@@ -6,7 +6,8 @@
     tools:context=".fragments.ForHimFragment">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/men_recycleView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true" />
 </RelativeLayout>

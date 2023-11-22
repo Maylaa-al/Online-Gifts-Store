@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/women_imageView"
+        android:id="@+id/recycle_imageView"
         android:layout_width="match_parent"
         android:layout_height="237dp"
         android:layout_marginBottom="366dp"
@@ -18,7 +18,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/women_textView"
+        android:id="@+id/recycle_textView"
         android:layout_width="match_parent"
         android:layout_height="49dp"
         android:layout_marginBottom="366dp"
@@ -28,6 +28,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/women_imageView"
+        app:layout_constraintTop_toTopOf="@+id/recycle_imageView"
         app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,13 +1,11 @@
 package com.example.glistenglowgifts.recycleView;
 
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.glistenglowgifts.R;
@@ -25,7 +23,7 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view =
-                LayoutInflater.from(parent.getContext()).inflate(R.layout.women_recycler_row, parent, false);
+                LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_row, parent, false);
         CustomViewHolder viewHolder = new CustomViewHolder(view);
         return viewHolder;
         }
@@ -49,8 +47,8 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter {
 
         public CustomViewHolder(View view) {
             super(view);
-            this.name = view.findViewById(R.id.women_textView);
-            this.image = view.findViewById(R.id.women_imageView);
+            this.name = view.findViewById(R.id.recycle_textView);
+            this.image = view.findViewById(R.id.recycle_imageView);
             view.setOnClickListener(this);
         }
 
