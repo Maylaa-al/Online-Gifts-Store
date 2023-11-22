@@ -20,6 +20,9 @@
         <action
             android:id="@+id/action_nav_categories_to_forHimFragment"
             app:destination="@id/forHimFragment" />
+        <action
+            android:id="@+id/action_nav_categories_to_handmadeFragment"
+            app:destination="@id/handmadeFragment" />
     </fragment>
     <fragment
         android:id="@+id/nav_favourites"
@@ -60,4 +63,9 @@
         android:name="com.example.glistenglowgifts.fragments.ForHimFragment"
         android:label="fragment_for_him"
         tools:layout="@layout/fragment_for_him" />
+    <fragment
+        android:id="@+id/handmadeFragment"
+        android:name="com.example.glistenglowgifts.fragments.HandmadeFragment"
+        android:label="fragment_handmade"
+        tools:layout="@layout/fragment_handmade" />
 </navigation>
