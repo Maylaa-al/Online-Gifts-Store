@@ -68,6 +68,9 @@ public class CustomGridViewAdapter extends ArrayAdapter<Cats> {
                     if (cat.getName().equals("Handmade Gifts Ideas")) {
                         Navigation.findNavController(view).navigate(R.id.action_nav_categories_to_handmadeFragment);
                     }
+                    if (cat.getName().equals("For Little Ones")) {
+                        Navigation.findNavController(view).navigate(R.id.action_nav_categories_to_forLittleOnesFragment);
+                    }
                     }
             });
 
