@@ -24,3 +24,4 @@ Glisten & Glow Gifts is an Android application aimed at providing users a seamle
 - *www.luxe.digital*
 - *www.happinessishomemade.net*
 - *www.realsimple.com*
+- *www.kiwico.com*
