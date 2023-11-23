@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_nav_categories_to_handmadeFragment"
             app:destination="@id/handmadeFragment" />
+        <action
+            android:id="@+id/action_nav_categories_to_forLittleOnesFragment"
+            app:destination="@id/forLittleOnesFragment" />
     </fragment>
     <fragment
         android:id="@+id/nav_favourites"
@@ -68,4 +71,9 @@
         android:name="com.example.glistenglowgifts.fragments.HandmadeFragment"
         android:label="fragment_handmade"
         tools:layout="@layout/fragment_handmade" />
+    <fragment
+        android:id="@+id/forLittleOnesFragment"
+        android:name="com.example.glistenglowgifts.fragments.ForLittleOnesFragment"
+        android:label="fragment_for_little_ones"
+        tools:layout="@layout/fragment_for_little_ones" />
 </navigation>
