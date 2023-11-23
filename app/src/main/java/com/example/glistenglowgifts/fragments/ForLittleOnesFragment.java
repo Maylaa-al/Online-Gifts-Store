@@ -3,12 +3,18 @@ package com.example.glistenglowgifts.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.glistenglowgifts.R;
+import com.example.glistenglowgifts.recycleView.CustomRecyclerViewAdapter;
+import com.example.glistenglowgifts.recycleView.Term;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +67,43 @@ public class ForLittleOnesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_for_little_ones, container, false);
+        View view = inflater.inflate(R.layout.fragment_for_little_ones, container, false);
+        int atomImg = R.drawable.atom_maze;
+        int chainImg = R.drawable.chain_reaction;
+        int cookingImg = R.drawable.cooking;
+        int growingSeedsImg = R.drawable.growing_seeds;
+        int launchAndPlayImg = R.drawable.launch_play;
+        int makeItMoveImg = R.drawable.make_it_move;
+        int microscopeImg = R.drawable.microscope;
+        int oceanExplorerImg = R.drawable.ocean_explorer;
+        int oilCleanupImg = R.drawable.oil_cleanup;
+        int peekAZppImg = R.drawable.peekazoo;
+        int pegboard = R.drawable.pegboard;
+        int pixelArt = R.drawable.pixel_art;
+        int projector = R.drawable.projector;
+        int rampImg = R.drawable.ramp;
+        int speakerImg = R.drawable.speaker;
+
+        ArrayList<Term> terms = new ArrayList<Term>();
+        terms.add(new Term("Atom Bead Maze", atomImg));
+        terms.add(new Term("Growing Seeds Tissue Box Toy", growingSeedsImg));
+        terms.add(new Term("Peek A Zoo Puzzle Box", peekAZppImg));
+        terms.add(new Term("Ocean Explorer Baby Activity Wedge", oceanExplorerImg));
+        terms.add(new Term("Color Wheel Racers and Ramp", rampImg));
+        terms.add(new Term("Launch And Play Catapult Games", launchAndPlayImg));
+        terms.add(new Term("Chain Reaction Workshop", chainImg));
+        terms.add(new Term("Science Of Cooking Ice Cream", cookingImg));
+        terms.add(new Term("Environmental Science Oil Cleanup", oilCleanupImg));
+        terms.add(new Term("Pixel Art Light box", pixelArt));
+        terms.add(new Term("Launch And Play Catapult Games", launchAndPlayImg));
+        terms.add(new Term("PegboardGames And Puzzles", pegboard));
+        terms.add(new Term("Microscope Exploration Set", microscopeImg));
+        terms.add(new Term("Make-It-Move Electronics Set", makeItMoveImg));
+        terms.add(new Term("Kinetic Light-Up Speaker", speakerImg));
+        terms.add(new Term("Color Projector Lamp", projector));
+        RecyclerView recyclerView = view.findViewById(R.id.forLittleOnes_recycleView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(new CustomRecyclerViewAdapter(terms));
+        return view;
     }
 }
