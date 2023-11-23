@@ -9,10 +9,12 @@
     <ImageView
         android:id="@+id/recycle_imageView"
         android:layout_width="match_parent"
-        android:layout_height="237dp"
-        android:layout_marginBottom="366dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="116dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/recycle_textView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -20,14 +22,37 @@
     <TextView
         android:id="@+id/recycle_textView"
         android:layout_width="match_parent"
-        android:layout_height="49dp"
-        android:layout_marginBottom="366dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="35dp"
+        android:fontFamily="@font/acme"
         android:gravity="center"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recycle_imageView" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="402dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="207dp"
+        android:text="_____________________________________"
+        android:textAlignment="center"
+        android:textColor="#1F02090E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/recycle_imageView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/recycle_textView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
