@@ -8,7 +8,7 @@
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/drawable/rounded_corners.xml" value="0.1" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/drawable/side_nav_bar.xml" value="0.1435" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/app_bar_main.xml" value="0.13160333642261354" />
+        <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/app_bar_main.xml" value="0.25" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/cat_grid_view.xml" value="0.22" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/cat_list_view.xml" value="0.25" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/cat_list_view2.xml" value="0.25" />
@@ -21,6 +21,7 @@
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/men_recycler_row.xml" value="0.1" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/nav_header_main.xml" value="0.33" />
+        <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/recycler_row.xml" value="0.2" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/women_recycler_row.xml" value="0.33" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/menu/main.xml" value="0.25" />
       </map>
