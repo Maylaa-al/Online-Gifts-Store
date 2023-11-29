@@ -53,11 +53,6 @@
         android:label="fragment_quiz"
         tools:layout="@layout/fragment_quiz" />
     <fragment
-        android:id="@+id/nav_credits"
-        android:name="com.example.glistenglowgifts.fragments.CreditsFragment"
-        android:label="fragment_credits"
-        tools:layout="@layout/fragment_credits" />
-    <fragment
         android:id="@+id/forHerFragment"
         android:name="com.example.glistenglowgifts.fragments.ForHerFragment"
         android:label="ForHerFragment" />
@@ -76,4 +71,9 @@
         android:name="com.example.glistenglowgifts.fragments.ForLittleOnesFragment"
         android:label="fragment_for_little_ones"
         tools:layout="@layout/fragment_for_little_ones" />
+    <fragment
+        android:id="@+id/nav_credits"
+        android:name="com.example.glistenglowgifts.fragments.vewPager2.VPHostFragment"
+        android:label="fragment_v_p_host"
+        tools:layout="@layout/fragment_v_p_host" />
 </navigation>
