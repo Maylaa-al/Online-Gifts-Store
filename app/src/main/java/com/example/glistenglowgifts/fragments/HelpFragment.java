@@ -65,6 +65,8 @@ public class HelpFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_help, container, false);
+
+        // Lunch external application (Map) using Intent
         ImageButton mapBtn = view.findViewById(R.id.findImg_btn);
         mapBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +76,24 @@ public class HelpFragment extends Fragment {
                 startActivity(i);
             }
         });
+
+        // Lunch external application (Email) and passing data using Intent
+        ImageButton emailBtn = view.findViewById(R.id.emailImg_btn);
+        emailBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_SENDTO);
+                i.setData(Uri.parse("mailto"));
+                i.putExtra(Intent.EXTRA_EMAIL, new String[] {"w0791722@myscc.ca"});
+                i.putExtra(Intent.EXTRA_CC, new String[] {"techsupport@glistenandglow.com"});
+                i.putExtra(Intent.EXTRA_TEXT,"I would like to report an issue with the following:\n");
+                startActivity(i);
+            }
+        });
+
+
+
+
         return view;
     }
 }
