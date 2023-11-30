@@ -9,9 +9,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.glistenglowgifts.R;
+import com.google.android.material.snackbar.Snackbar;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -83,7 +85,7 @@ public class HelpFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Intent.ACTION_SENDTO);
-                i.setData(Uri.parse("mailto"));
+                i.setData(Uri.parse("mailto:"));
                 i.putExtra(Intent.EXTRA_EMAIL, new String[] {"w0791722@myscc.ca"});
                 i.putExtra(Intent.EXTRA_CC, new String[] {"techsupport@glistenandglow.com"});
                 i.putExtra(Intent.EXTRA_TEXT,"I would like to report an issue with the following:\n");
@@ -91,9 +93,33 @@ public class HelpFragment extends Fragment {
             }
         });
 
+        // Lunch external application (Dial) using Intent
+        String phone = "5199912345";
+        ImageButton callButton = view.findViewById(R.id.callUsImg_btn);
+        callButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_DIAL, Uri.parse(phone));
+                if(i.resolveActivity(getActivity().getPackageManager()) != null) {
+                    startActivity(i);
+                } else {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content), "No Installed Software To Complete Task", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
+            }
+        });
 
-
-
+        // Lunch external application (web app) using Intent
+        ImageButton openWebsiteButton = view.findViewById(R.id.mySiteImg_btn);
+        openWebsiteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String websiteUrl = "https://www.example.com";
+                Uri uri = Uri.parse(websiteUrl);
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 }
