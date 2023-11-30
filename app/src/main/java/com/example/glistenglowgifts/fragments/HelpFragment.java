@@ -65,7 +65,15 @@ public class HelpFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_help, container, false);
-
+        ImageButton mapBtn = view.findViewById(R.id.findImg_btn);
+        mapBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri location = Uri.parse("geo:42.3162576,-83.3451176,11?q=Gifts Shop");
+                Intent i = new Intent(Intent.ACTION_VIEW,location);
+                startActivity(i);
+            }
+        });
         return view;
     }
 }
