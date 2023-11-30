@@ -22,4 +22,15 @@
     <string name="glisten_glow"><![CDATA[Glisten & Glow]]></string>
     <string name="gifts">Gifts</string>
     <string name="discover_your_perfect_gift">Discover your perfect gift</string>
+    <string name="search">Didn\'t find what are you looking for?</string>
+    <string name="searchImage">search the map</string>
+    <string name="find_a_store">Find a nearby store</string>
+    <string name="call_us">Give us a call</string>
+    <string name="question">Have a question about your order?</string>
+    <string name="order">Have a question about your order?</string>
+    <string name="visit_website" />
+    <string name="visitWebsite">Visit my website</string>
+    <string name="callUs">Call Us</string>
+    <string name="emailUs">Email us</string>
+    <string name="findAstore">Find a nearby store</string>
 </resources>
