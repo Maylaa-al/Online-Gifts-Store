@@ -2,6 +2,8 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/acme</item>
+        <item>@font/aladin</item>
+        <item>@font/allan</item>
         <item>@font/amarante</item>
         <item>@font/montez</item>
     </array>
