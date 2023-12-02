@@ -76,4 +76,22 @@
         android:name="com.example.glistenglowgifts.fragments.vewPager2.VPHostFragment"
         android:label="fragment_v_p_host"
         tools:layout="@layout/fragment_v_p_host" />
+    <fragment
+        android:id="@+id/catListFragment"
+        android:name="com.example.glistenglowgifts.fragments.CatListFragment"
+        android:label="fragment_cat_list"
+        tools:layout="@layout/fragment_cat_list" >
+        <action
+            android:id="@+id/action_catListFragment_to_forHimFragment"
+            app:destination="@id/forHimFragment" />
+        <action
+            android:id="@+id/action_catListFragment_to_forHerFragment"
+            app:destination="@id/forHerFragment" />
+        <action
+            android:id="@+id/action_catListFragment_to_handmadeFragment"
+            app:destination="@id/handmadeFragment" />
+        <action
+            android:id="@+id/action_catListFragment_to_forLittleOnesFragment"
+            app:destination="@id/forLittleOnesFragment" />
+    </fragment>
 </navigation>

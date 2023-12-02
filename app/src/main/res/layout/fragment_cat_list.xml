@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".fragments.CategoriesFragment">
-
-
+    tools:context=".fragments.CatListFragment">
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
@@ -42,20 +38,9 @@
                 android:id="@+id/cat_list_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="gone"
+                android:visibility="visible"
                 tools:listitem="@layout/cat_list_view"></ListView>
-
-            <GridView
-                android:id="@+id/cat_grid_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="20dp"
-                android:columnWidth="100dp"
-                android:numColumns="2"
-                tools:listitem="@layout/cat_grid_view"
-                tools:visibility="visible" />
 
         </FrameLayout>
     </LinearLayout>
-
 </FrameLayout>
