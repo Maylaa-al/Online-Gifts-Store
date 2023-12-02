@@ -102,7 +102,7 @@ public class CategoriesFragment extends Fragment {
         int handmadeImg = R.drawable.handmade;
 
         TextView description = view.findViewById(R.id.description);
-        SwitchCompat toggleButton = view.findViewById(R.id.app_bar_switch);
+//        SwitchCompat toggleButton = view.findViewById(R.id.list_view_switch);
         ArrayList<Cats> cats = new ArrayList<>();
         cats.add(new Cats(forWomenImg, "For Women", "some testing description for women"));
         cats.add(new Cats(forMenImg, "For Men", "Some testing description for men"));

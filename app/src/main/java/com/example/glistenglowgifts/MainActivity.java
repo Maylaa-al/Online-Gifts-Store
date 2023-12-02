@@ -1,5 +1,6 @@
 package com.example.glistenglowgifts;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Menu;
@@ -56,19 +57,28 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    public boolean onOptionItemSelected(@NonNull MenuItem item) {
-//        if (item.isEnabled()) {
-//            setContentView(R.layout.cat_list_view);
-//        } else {
-//            setContentView(R.layout.cat_grid_view);
-//        }
-        return true;
-    }
-
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    // Start SettingsActivity
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        // Check if the settings item was clicked
+        if (id == R.id.action_settings) {
+            Intent startSettingsIntent = new Intent(this, SettingsActivity.class);
+            startActivity(startSettingsIntent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+
 }
