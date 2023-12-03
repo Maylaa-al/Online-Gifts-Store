@@ -1,12 +1,11 @@
 <resources>
-    <string name="app_name">Glisten &amp; Glow Gifts</string>
+    <string name="app_name">Glisten &amp;            Glow Gifts</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Glisten &amp; Glow Gifts</string>
+    <string name="nav_header_subtitle">MA177@myscc.ca@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
@@ -19,7 +18,9 @@
     <string name="menu_faq">FAQ</string>
     <string name="menu_help">Help</string>
     <string name="menu_credits">Credits</string>
-    <string name="glisten_glow"><![CDATA[Glisten & Glow]]></string>
+    <string name="glisten"><![CDATA[Glisten]]></string>
+    <string name="and"><![CDATA[&]]></string>
+    <string name="glow">Glow</string>
     <string name="gifts">Gifts</string>
     <string name="discover_your_perfect_gift">Discover your perfect gift</string>
     <string name="search">Didn\'t find what are you looking for?</string>
@@ -33,4 +34,26 @@
     <string name="callUs">Call Us</string>
     <string name="emailUs">Email us</string>
     <string name="findAstore">Find a nearby store</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <!-- Switch Preferences -->
+    <string name="view_mode_list">List View Mode</string>
+    <string name="view_mode_grid">Grid View Mode</string>
+
+
 </resources>

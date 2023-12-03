@@ -1,9 +1,12 @@
 package com.example.glistenglowgifts;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Menu;
 
+import com.example.glistenglowgifts.fragments.CategoriesFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +16,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 import com.example.glistenglowgifts.databinding.ActivityMainBinding;
 
@@ -41,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_categories, R.id.nav_favourites, R.id.nav_cart, R.id.nav_quiz,R.id.nav_faq, R.id.nav_help, R.id.nav_credits)
+                R.id.nav_home, R.id.nav_categories, R.id.catListFragment, R.id.nav_cart, R.id.nav_help, R.id.nav_credits)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
@@ -56,19 +60,29 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    public boolean onOptionItemSelected(@NonNull MenuItem item) {
-//        if (item.isEnabled()) {
-//            setContentView(R.layout.cat_list_view);
-//        } else {
-//            setContentView(R.layout.cat_grid_view);
-//        }
-        return true;
-    }
-
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    // Start SettingsActivity
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        // Check if the settings item was clicked
+        if (id == R.id.action_settings) {
+            Intent startSettingsIntent = new Intent(this, SettingsActivity.class);
+            startActivity(startSettingsIntent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+
+
 }

@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/drawable/bachground_gradient.xml" value="0.214" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/drawable/gradient.xml" value="0.138" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/drawable/gradient_background.xml" value="0.1" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/drawable/rounded_corners.xml" value="0.1" />
@@ -15,6 +16,7 @@
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/cat_list_view2.xml" value="0.25" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/content_main.xml" value="0.13160333642261354" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/fragment_blank.xml" value="0.22" />
+        <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/fragment_cat_list.xml" value="0.33" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/fragment_categories.xml" value="0.33" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/fragment_credit_facts.xml" value="0.1" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/fragment_credits.xml" value="0.1" />
@@ -28,8 +30,11 @@
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/men_recycler_row.xml" value="0.1" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/nav_header_main.xml" value="0.33" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/recycler_row.xml" value="0.2" />
+        <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/settings_activity.xml" value="0.39481996209728365" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/layout/women_recycler_row.xml" value="0.33" />
+        <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/menu/activity_main_drawer.xml" value="1.1" />
         <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/menu/main.xml" value="0.25" />
+        <entry key="..\:/Users/tsh86/AndroidStudioProjects/GlistenGlowGifts/app/src/main/res/xml/root_preferences.xml" value="0.1" />
       </map>
     </option>
   </component>
