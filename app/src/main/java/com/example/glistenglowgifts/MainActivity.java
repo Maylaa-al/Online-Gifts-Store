@@ -5,11 +5,14 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Menu;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import com.example.glistenglowgifts.fragments.CategoriesFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -20,10 +23,57 @@ import androidx.preference.PreferenceManager;
 
 import com.example.glistenglowgifts.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+
+    // Add animation to navigation drawer
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        // Depending on the ID of the item, perform your animations
+        if (id == R.id.nav_home) {
+            // Apply animation for Home item
+            applyScaleAnimation();
+        } else if (id == R.id.nav_categories) {
+            // Apply a different animation for Categories
+            applyRotateFadeInAnimation();
+        } else if (id == R.id.nav_credits) {
+            // Apply a different animation for Categories
+            applyRotateFadeInAnimation();
+        }
+
+        // Close the drawer after item click
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    private void applyFadeInAnimation() {
+        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        // Replace 'binding.navView' with the specific view you want to animate
+        binding.navView.startAnimation(fadeIn);
+    }
+
+    private void applySlideInAnimation() {
+        Animation slideIn = AnimationUtils.loadAnimation(this, R.anim.slide_in);
+        // Replace 'binding.navView' with the specific view you want to animate
+        binding.navView.startAnimation(slideIn);
+    }
+
+    private void applyScaleAnimation() {
+        Animation scaleAnimation = AnimationUtils.loadAnimation(this, R.anim.scale_up);
+        binding.navView.startAnimation(scaleAnimation);
+    }
+
+    private void applyRotateFadeInAnimation() {
+        Animation rotateFadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate_fade_in);
+        binding.navView.startAnimation(rotateFadeInAnimation);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,8 +131,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
 
 
 }
