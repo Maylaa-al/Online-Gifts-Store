@@ -22,11 +22,11 @@
         android:layout_gravity="center"
         android:layout_margin="20dp"
         android:layout_marginTop="40dp"
-        android:fontFamily="@font/montez"
+        android:fontFamily="@font/pacifico"
         android:paddingTop="30dp"
         android:text="Text View"
         android:textAlignment="center"
         android:textColor="#498EDA"
-        android:textSize="50sp"
+        android:textSize="48sp"
         tools:layout_editor_absoluteX="10dp" />
 </androidx.appcompat.widget.LinearLayoutCompat>

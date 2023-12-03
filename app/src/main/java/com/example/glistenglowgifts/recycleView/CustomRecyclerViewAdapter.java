@@ -44,11 +44,11 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter {
     final Term term = myTerms.get(position);
     final CustomViewHolder holder1 = (CustomViewHolder) holder;
     holder1.name.setText((term.getName()));
-    holder1.description.setText((term.getDescription()));
+//    holder1.description.setText((term.getDescription()));
     holder1.image.setImageResource(term.getImage());
 
 
-    foldingCell = holder.itemView.findViewById(R.id.folding_cell);
+//    foldingCell = holder.itemView.findViewById(R.id.folding_cell);
 //     recycle_imageView = holder.itemView.findViewById(R.id.recycle_textView);
 //     description = holder.itemView.findViewById(R.id.description);
 //     recycle_imageView = holder.itemView.findViewById(R.id.recycle_imageView);
