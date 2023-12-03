@@ -1,12 +1,21 @@
 package com.example.glistenglowgifts;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.CompoundButton;
+import android.widget.ToggleButton;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.PreferenceManager;
+
+import com.example.glistenglowgifts.fragments.CategoriesFragment;
 
 public class SettingsActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +37,17 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey);
+
+            findPreference("view_mode").setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+                @Override
+                public boolean onPreferenceChange(Preference preference, Object newValue) {
+                    // Here, 'newValue' will be a boolean representing the state of the switch
+                    // Save this value to SharedPreferences
+                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+                    prefs.edit().putBoolean("view_mode", (Boolean) newValue).apply();
+                    return true;
+                }
+            });
         }
     }
 

@@ -26,32 +26,20 @@
         <action
             android:id="@+id/action_nav_categories_to_forLittleOnesFragment"
             app:destination="@id/forLittleOnesFragment" />
+        <action
+            android:id="@+id/action_nav_categories_to_catListFragment"
+            app:destination="@id/catListFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/nav_favourites"
-        android:name="com.example.glistenglowgifts.fragments.FavouritesFragment"
-        android:label="fragment_favourites"
-        tools:layout="@layout/fragment_favourites" />
     <fragment
         android:id="@+id/nav_cart"
         android:name="com.example.glistenglowgifts.fragments.CartFragment"
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart" />
     <fragment
-        android:id="@+id/nav_faq"
-        android:name="com.example.glistenglowgifts.fragments.FAQFragment"
-        android:label="fragment_f_a_q"
-        tools:layout="@layout/fragment_f_a_q" />
-    <fragment
         android:id="@+id/nav_help"
         android:name="com.example.glistenglowgifts.fragments.HelpFragment"
         android:label="fragment_help"
         tools:layout="@layout/fragment_help" />
-    <fragment
-        android:id="@+id/nav_quiz"
-        android:name="com.example.glistenglowgifts.fragments.QuizFragment"
-        android:label="fragment_quiz"
-        tools:layout="@layout/fragment_quiz" />
     <fragment
         android:id="@+id/forHerFragment"
         android:name="com.example.glistenglowgifts.fragments.ForHerFragment"
@@ -93,5 +81,8 @@
         <action
             android:id="@+id/action_catListFragment_to_forLittleOnesFragment"
             app:destination="@id/forLittleOnesFragment" />
+        <action
+            android:id="@+id/action_catListFragment_to_nav_categories"
+            app:destination="@id/nav_categories" />
     </fragment>
 </navigation>

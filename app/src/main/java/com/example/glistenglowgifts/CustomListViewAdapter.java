@@ -15,10 +15,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomListViewAdapter extends ArrayAdapter<Cats> {
+    private CustomGridViewAdapter.OnCatClickListener listener;
 
 
     public CustomListViewAdapter(@NonNull Context context, @NonNull ArrayList<Cats> cats) {
         super(context, 0, cats);
+    }
+
+    public interface OnCatClickListener {
+        void onCatClick(Cats cat);
+    }
+
+    public void setOnCatCickListener(CustomGridViewAdapter.OnCatClickListener listener) {
+        this.listener = listener;
     }
 
     @NonNull
@@ -37,16 +46,16 @@ public class CustomListViewAdapter extends ArrayAdapter<Cats> {
                 @Override
                 public void onClick(View view) {
                     if (cat.getName().equals("For Women")) {
-                        Navigation.findNavController(view).navigate(R.id.action_nav_categories_to_forHerFragment);
+                        Navigation.findNavController(view).navigate(R.id.action_catListFragment_to_forHerFragment);
                     }
                     if (cat.getName().equals("For Men")) {
-                        Navigation.findNavController(view).navigate(R.id.action_nav_categories_to_forHimFragment);
+                        Navigation.findNavController(view).navigate(R.id.action_catListFragment_to_forHimFragment);
                     }
                     if (cat.getName().equals("Handmade Gifts Ideas")) {
-                        Navigation.findNavController(view).navigate(R.id.action_nav_categories_to_handmadeFragment);
+                        Navigation.findNavController(view).navigate(R.id.action_catListFragment_to_handmadeFragment);
                     }
                     if (cat.getName().equals("For Little Ones")) {
-                        Navigation.findNavController(view).navigate(R.id.action_nav_categories_to_forLittleOnesFragment);
+                        Navigation.findNavController(view).navigate(R.id.action_catListFragment_to_forLittleOnesFragment);
                     }
                 }
             });

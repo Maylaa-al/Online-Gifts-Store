@@ -12,22 +12,12 @@
             android:id="@+id/nav_categories"
             android:icon="@drawable/ic_round_category_24"
             android:title="@string/menu_categories" />
-        <item
-            android:id="@+id/nav_favourites"
-            android:icon="@drawable/ic_round_monitor_heart_24"
-            android:title="@string/menu_favourites" />
+        
         <item
             android:id="@+id/nav_cart"
             android:icon="@drawable/ic_round_shopping_cart_24"
             android:title="@string/menu_cart" />
-        <item
-            android:id="@+id/nav_quiz"
-            android:icon="@drawable/ic_round_quiz_24"
-            android:title="@string/menu_quiz" />
-        <item
-            android:id="@+id/nav_faq"
-            android:icon="@drawable/ic_round_question_answer_24"
-            android:title="@string/menu_faq" />
+
         <item
             android:id="@+id/nav_help"
             android:icon="@drawable/ic_round_live_help_24"

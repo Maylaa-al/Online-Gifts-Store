@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.CompoundButton;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -36,6 +38,7 @@ import java.util.ArrayList;
  */
 public class CategoriesFragment extends Fragment {
 
+    private boolean isGridView;
     private ToggleButton toggleButton;
     FragmentManager fm;
 
@@ -90,8 +93,11 @@ public class CategoriesFragment extends Fragment {
     // This method is called when the UI is created
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_categories, container, false);
+        // Decide which layout to inflate based on the isGridView flag
+        View view = inflater.inflate( R.layout.fragment_categories , container, false);
+
 
         // Initialize UI components
         ListView listView = view.findViewById(R.id.cat_list_view);
@@ -116,30 +122,36 @@ public class CategoriesFragment extends Fragment {
 
         CustomGridViewAdapter gridAdapter = new CustomGridViewAdapter(getContext(), cats);
         gridView.setAdapter(gridAdapter);
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+//        if (gridView != null) {
+//             gridAdapter = new CustomGridViewAdapter(getContext(), cats);
+//            gridView.setAdapter(gridAdapter);
+//        } else {
+//            Log.e("Categories Fragment","Grid View is null");
+//        }
+
+        ImageButton listBtn = view.findViewById(R.id.list_button);
+        listBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_nav_categories_to_catListFragment);
+               // #######################3
+            }
+        });
+
+//        ImageButton gridButton = view.findViewById(R.id.grid_button);
+//        gridButton.setOnClickListener(new View.OnClickListener() {
 //            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                description.setText(((Cats) listView.getItemAtPosition(position)).getDescription());
+//            public void onClick(View v) {
+//                Navigation.findNavController(view).navigate(R.id.action_catListFragment_to_nav_categories);
 //            }
 //        });
-//        if (toggleButton != null) {
-//
-//            toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//                @Override
-//
-//
-//                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                    // Switch between the grid view and the list view based on the checked state of the toggle button
-//                    if (toggleButton.isChecked()) {
-//                        gridView.setVisibility(View.GONE);
-//                    } else {
-//                        gridView.setVisibility(View.VISIBLE);
-//
-//                    }
-//                }
-//            });
-//
-//        }
+
             return view;
         }
+
+//    public void setGridView(boolean isGridView) {
+//        this.isGridView = isGridView;
+//    }
+
     }

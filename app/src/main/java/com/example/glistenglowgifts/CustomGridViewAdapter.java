@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 // Adapters handle user interaction with the data items
 public class CustomGridViewAdapter extends ArrayAdapter<Cats> {
-    ArrayList<Cats> cats;
+//    ArrayList<Cats> cats;
     private OnCatClickListener listener;
 
 
