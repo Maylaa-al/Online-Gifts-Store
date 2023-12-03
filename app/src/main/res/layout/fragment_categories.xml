@@ -16,8 +16,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:scaleType="fitXY"
         android:src="@drawable/background_secondary" />
 
@@ -56,6 +56,7 @@
                 android:id="@+id/cat_grid_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layoutAnimation="@anim/layout_animation_fall_down"
                 android:layout_margin="20dp"
                 android:columnWidth="100dp"
                 android:numColumns="2"

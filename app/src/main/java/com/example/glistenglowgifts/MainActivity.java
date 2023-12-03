@@ -5,11 +5,17 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Menu;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import com.example.glistenglowgifts.fragments.CategoriesFragment;
+import com.example.glistenglowgifts.fragments.HomeFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -20,10 +26,57 @@ import androidx.preference.PreferenceManager;
 
 import com.example.glistenglowgifts.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+
+    // Add animation to navigation drawer
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        Fragment fragment = null;
+        String tag = null;
+
+        int id = item.getItemId();
+        if (id == R.id.nav_home) {
+            fragment = new HomeFragment();
+            tag = "HOME_FRAGMENT";
+        } else if (id == R.id.nav_categories) {
+            fragment = new CategoriesFragment();
+            tag = "CATEGORIES_FRAGMENT";
+        }
+
+        if (fragment != null) {
+            switchFragment(fragment, tag);
+        }
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    private void applyFadeInAnimation() {
+        Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        // Replace 'binding.navView' with the specific view you want to animate
+        binding.navView.startAnimation(fadeIn);
+    }
+
+    private void applySlideInAnimation() {
+        Animation slideIn = AnimationUtils.loadAnimation(this, R.anim.slide_in);
+        // Replace 'binding.navView' with the specific view you want to animate
+        binding.navView.startAnimation(slideIn);
+    }
+
+    private void applyScaleAnimation() {
+        Animation scaleAnimation = AnimationUtils.loadAnimation(this, R.anim.scale_up);
+        binding.navView.startAnimation(scaleAnimation);
+    }
+
+    private void applyRotateFadeInAnimation() {
+        Animation rotateFadeInAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate_fade_in);
+        binding.navView.startAnimation(rotateFadeInAnimation);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +135,25 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void switchFragment(Fragment fragment, String tag) {
+        // Prepare a FragmentTransaction
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+        // Set custom animations
+        transaction.setCustomAnimations(
+                R.anim.fade_in,  // Enter animation
+                R.anim.fade_out, // Exit animation
+                R.anim.fade_in,  // Pop Enter animation
+                R.anim.fade_out  // Pop Exit animation
+        );
+
+        // Replace the current fragment with the new fragment
+        transaction.replace(R.id.nav_categories, fragment, tag);
+
+        // Add to back stack and commit
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
 
 
 
