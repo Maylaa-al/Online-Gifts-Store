@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.example.glistenglowgifts.CartManager;
 import com.example.glistenglowgifts.R;
+import com.example.glistenglowgifts.cartRecycleView.CartRecycleViewAdapter;
 import com.example.glistenglowgifts.recycleView.CustomRecyclerViewAdapter;
 
 /**
@@ -69,7 +70,7 @@ public class CartFragment extends Fragment {
             cartRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
             // Adapter for cart items
-            CustomRecyclerViewAdapter cartAdapter = new CustomRecyclerViewAdapter(getContext(), CartManager.getInstance().getCartItems());
+            CartRecycleViewAdapter cartAdapter = new CartRecycleViewAdapter(getContext(), CartManager.getInstance().getCartItems());
             cartRecyclerView.setAdapter(cartAdapter);
 
             return view;
