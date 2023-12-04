@@ -12,21 +12,23 @@ import android.widget.TextView;
 import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.glistenglowgifts.CartManager;
 import com.example.glistenglowgifts.R;
 import com.ramotion.foldingcell.FoldingCell;
 
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CustomRecyclerViewAdapter extends RecyclerView.Adapter {
-    private ArrayList<Term> myTerms;
+    private List<Term> myTerms;
 
     // context to access SharedPreferences
     private Context context;
 
 
-    public CustomRecyclerViewAdapter(Context context, ArrayList<Term> myTerms) {
+    public CustomRecyclerViewAdapter(Context context, List<Term> myTerms) {
         this.context = context;
         this.myTerms = myTerms;
     }
@@ -59,7 +61,9 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter {
         holder1.cartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ////////////////////////////
+                // Add term to cart
+                CartManager.getInstance().addItemToCart(term);
+
             }
         });
 
@@ -92,6 +96,10 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter {
         protected TextView price;
         protected TextView description;
         protected ImageButton cartButton;
+        protected ImageButton delete;
+        protected ImageView cartImage;
+        protected TextView cartPrice;
+        protected TextView cartName;
 
         public CustomViewHolder(View view) {
             super(view);
@@ -101,6 +109,9 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter {
             this.price = view.findViewById(R.id.price_view);
             this.description = view.findViewById(R.id.description);
             this.cartButton = view.findViewById(R.id.cart_button);
+            this.delete = view.findViewById(R.id.delete_btn);
+            this.cartImage = view.findViewById(R.id.cart_image_view);
+            this.cartPrice = view.findViewById(R.id.cart_name);
 
             view.setOnClickListener(this);
         }
