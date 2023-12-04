@@ -5,27 +5,30 @@ import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.glistenglowgifts.CartManager;
 import com.example.glistenglowgifts.R;
 import com.ramotion.foldingcell.FoldingCell;
 
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CustomRecyclerViewAdapter extends RecyclerView.Adapter {
-    private ArrayList<Term> myTerms;
+    private List<Term> myTerms;
 
     // context to access SharedPreferences
     private Context context;
 
 
-    public CustomRecyclerViewAdapter(Context context, ArrayList<Term> myTerms) {
+    public CustomRecyclerViewAdapter(Context context, List<Term> myTerms) {
         this.context = context;
         this.myTerms = myTerms;
     }
@@ -55,6 +58,14 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter {
         holder1.currency.setText(term.getCurrency());
         holder1.price.setText(String.valueOf(term.getPrice()));
         holder1.description.setText(term.getDescription());
+        holder1.cartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Add term to cart
+                CartManager.getInstance().addItemToCart(term);
+
+            }
+        });
 
         double convertedPrice = term.getConvertedPrice();
         // Convert price if necessary
@@ -84,6 +95,11 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter {
         protected TextView currency;
         protected TextView price;
         protected TextView description;
+        protected ImageButton cartButton;
+        protected ImageButton delete;
+        protected ImageView cartImage;
+        protected TextView cartPrice;
+        protected TextView cartName;
 
         public CustomViewHolder(View view) {
             super(view);
@@ -92,6 +108,11 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter {
             this.currency = view.findViewById(R.id.currency_view);
             this.price = view.findViewById(R.id.price_view);
             this.description = view.findViewById(R.id.description);
+            this.cartButton = view.findViewById(R.id.cart_button);
+            this.delete = view.findViewById(R.id.delete_btn);
+            this.cartImage = view.findViewById(R.id.cart_image_view);
+            this.cartPrice = view.findViewById(R.id.cart_name);
+
             view.setOnClickListener(this);
         }
 
