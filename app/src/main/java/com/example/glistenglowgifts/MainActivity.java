@@ -10,6 +10,8 @@ import android.view.animation.AnimationUtils;
 
 import com.example.glistenglowgifts.fragments.CategoriesFragment;
 import com.example.glistenglowgifts.fragments.HomeFragment;
+import com.example.glistenglowgifts.recycleView.CustomRecyclerViewAdapter;
+import com.example.glistenglowgifts.recycleView.Term;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
@@ -26,10 +28,14 @@ import androidx.preference.PreferenceManager;
 
 import com.example.glistenglowgifts.databinding.ActivityMainBinding;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+    private CustomRecyclerViewAdapter adapter;
+    private SharedPreferences.OnSharedPreferenceChangeListener prefListener;
 
     // Add animation to navigation drawer
     @Override
@@ -104,7 +110,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        // Initialize the adapter with an empty list or a valid list of Terms
+        adapter = new CustomRecyclerViewAdapter(this, new ArrayList<Term>());
+
+        // Register SharedPreferences listener
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        prefListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+            @Override
+            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+                if ("currency_preference".equals(key)) {
+                    // Notify adapter about the preference change
+                    adapter.notifyCurrencyChanged();
+                }
+            }
+        };
+        prefs.registerOnSharedPreferenceChangeListener(prefListener);
+
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        prefs.unregisterOnSharedPreferenceChangeListener(prefListener);
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

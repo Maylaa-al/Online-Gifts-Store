@@ -1,5 +1,4 @@
 <resources>
-    <!-- Reply Preference -->
     <string-array name="reply_entries">
         <item>Reply</item>
         <item>Reply to all</item>
@@ -9,4 +8,14 @@
         <item>reply</item>
         <item>reply_all</item>
     </string-array>
+
+    <string-array name="currency_options">
+        <item>USD</item>
+        <item>CD</item>
+    </string-array>
+    <string-array name="currency_values">
+        <item>USD</item>
+        <item>CD</item>
+    </string-array>
+
 </resources>

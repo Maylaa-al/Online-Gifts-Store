@@ -47,5 +47,18 @@
 <!--            app:title="@string/attachment_title" />-->
 
 <!--    </PreferenceCategory>-->
+    <PreferenceCategory>
+        <ListPreference
+            android:key="currency_preference"
+            android:title="Select Currency"
+            android:dialogTitle="Choose Currency"
+            android:entries="@array/currency_options"
+            android:entryValues="@array/currency_values"
+            android:defaultValue="USD"
+            android:singleLineTitle="true"
+            android:summary="Choose between USD and CD"/>
+
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
