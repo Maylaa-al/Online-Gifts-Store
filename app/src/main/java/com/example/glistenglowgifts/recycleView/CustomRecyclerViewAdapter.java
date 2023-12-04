@@ -12,14 +12,10 @@ import android.widget.TextView;
 import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.glistenglowgifts.CartManager;
+import com.example.glistenglowgifts.cartRecycleView.CartManager;
 import com.example.glistenglowgifts.R;
 import com.example.glistenglowgifts.cartRecycleView.Item;
-import com.ramotion.foldingcell.FoldingCell;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class CustomRecyclerViewAdapter extends RecyclerView.Adapter {

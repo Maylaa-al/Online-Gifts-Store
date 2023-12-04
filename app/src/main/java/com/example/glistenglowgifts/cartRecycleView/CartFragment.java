@@ -1,4 +1,4 @@
-package com.example.glistenglowgifts.fragments;
+package com.example.glistenglowgifts.cartRecycleView;
 
 import android.os.Bundle;
 
@@ -10,10 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.glistenglowgifts.CartManager;
 import com.example.glistenglowgifts.R;
-import com.example.glistenglowgifts.cartRecycleView.CartRecycleViewAdapter;
-import com.example.glistenglowgifts.recycleView.CustomRecyclerViewAdapter;
 
 /**
  * A simple {@link Fragment} subclass.

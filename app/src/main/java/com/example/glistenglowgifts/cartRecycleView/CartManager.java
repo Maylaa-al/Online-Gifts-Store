@@ -1,7 +1,4 @@
-package com.example.glistenglowgifts;
-
-import com.example.glistenglowgifts.cartRecycleView.Item;
-import com.example.glistenglowgifts.recycleView.Term;
+package com.example.glistenglowgifts.cartRecycleView;
 
 import java.util.ArrayList;
 import java.util.List;
