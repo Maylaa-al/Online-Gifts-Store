@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -55,6 +56,12 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter {
         holder1.currency.setText(term.getCurrency());
         holder1.price.setText(String.valueOf(term.getPrice()));
         holder1.description.setText(term.getDescription());
+        holder1.cartButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ////////////////////////////
+            }
+        });
 
         double convertedPrice = term.getConvertedPrice();
         // Convert price if necessary
@@ -84,6 +91,7 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter {
         protected TextView currency;
         protected TextView price;
         protected TextView description;
+        protected ImageButton cartButton;
 
         public CustomViewHolder(View view) {
             super(view);
@@ -92,6 +100,8 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter {
             this.currency = view.findViewById(R.id.currency_view);
             this.price = view.findViewById(R.id.price_view);
             this.description = view.findViewById(R.id.description);
+            this.cartButton = view.findViewById(R.id.cart_button);
+
             view.setOnClickListener(this);
         }
 
